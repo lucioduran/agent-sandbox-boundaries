@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-sandbox-boundaries"
+version = "0.1.0"
+description = "Capability-free ephemeral Wasmtime runner with observable resource boundaries"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["wasmtime==50.0.1"]
+
+[project.scripts]
+sandbox-boundaries = "sandbox_boundaries.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["sandbox_boundaries*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["sandbox_boundaries"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["stress: bounded exhaustion probes, run with the shared benchmark lock"]
