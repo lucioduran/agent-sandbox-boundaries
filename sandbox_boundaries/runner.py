@@ -10,6 +10,7 @@ import subprocess
 import sys
 import tempfile
 import time
+from contextlib import suppress
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
@@ -95,12 +96,22 @@ def run(module: bytes, policy: Policy | None = None) -> Result:
                 remaining = max(0.001, policy.wall_seconds - (time.monotonic() - started))
                 output, _ = process.communicate(request, timeout=remaining)
             except subprocess.TimeoutExpired:
-                os.killpg(process.pid, signal.SIGKILL)
+                with suppress(ProcessLookupError):
+                    os.killpg(process.pid, signal.SIGKILL)
                 process.communicate()
                 status, value, detail = "wall_limit", None, "worker deadline exceeded"
+            except BaseException:
+                with suppress(ProcessLookupError):
+                    os.killpg(process.pid, signal.SIGKILL)
+                process.communicate()
+                raise
             else:
                 if process.returncode in (-signal.SIGKILL, -signal.SIGXCPU):
-                    status, value, detail = "cpu_limit", None, "worker received CPU-limit signal"
+                    status, value, detail = (
+                        "cpu_limit",
+                        None,
+                        "worker killed by signal consistent with CPU cap; external kill is indistinguishable",
+                    )
                 elif process.returncode:
                     status, value, detail = "worker_error", None, "worker failed without a report"
                 else:
