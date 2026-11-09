@@ -96,6 +96,32 @@ def main() -> int:
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+    matrix = [
+        "# Observed boundary matrix",
+        "",
+        f"Measured source commit: `{report['source_commit']}`.",
+        "",
+        "One local invocation per case. See boundaries.json for exact policies and environment.",
+        "",
+        "| Probe | Boundary | Status | Value | Elapsed seconds | Expected outcome |",
+        "| --- | --- | --- | ---: | ---: | --- |",
+    ]
+    for row in rows:
+        result = row["result"]
+        matrix.append(
+            f"| {row['name']} | {row['boundary']} | {result['status']} | "
+            f"{result['value']} | {result['elapsed_seconds']:.4f} | "
+            f"{'pass' if row['passed'] else 'FAIL'} |"
+        )
+    matrix.extend(
+        [
+            "",
+            "Unsupported positive disk, allowed network and total process-memory profiles were rejected.",
+            "Synthetic canary integrity and absence of new files in its directory were checked.",
+            "Guest memory limits do not cap worker RSS. No packet capture or security audit was performed.",
+        ]
+    )
+    args.output.with_suffix(".md").write_text("\n".join(matrix) + "\n")
     return 0 if passed else 1
 
 

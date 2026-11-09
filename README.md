@@ -36,12 +36,15 @@ The JSON report has `status: "ok"` and `value: 42`. WAT conversion is a trusted 
 from pathlib import Path
 from sandbox_boundaries import Policy, run
 
-result = run(Path("build/answer.wasm").read_bytes(), Policy(
-    fuel=100_000,
-    cpu_seconds=2,
-    wall_seconds=5,
-    memory_bytes=65_536,
-))
+result = run(
+    Path("build/answer.wasm").read_bytes(),
+    Policy(
+        fuel=100_000,
+        cpu_seconds=2,
+        wall_seconds=5,
+        memory_bytes=65_536,
+    ),
+)
 print(result.status, result.value)
 ```
 
@@ -83,7 +86,7 @@ The experiment creates its own synthetic canary, attempts relative traversal and
 
 ## Results
 
-The [raw report](results/boundaries.json) records 19 of 19 expected outcomes and rejection of all three unsupported profiles on an Intel Xeon W-3223 host with 48 GiB RAM, Python 3.11.9 and Wasmtime 50.0.1. Exact OS build, architecture, timestamp and source hashes are included. The [boundary matrix](results/matrix.md) summarizes each observation.
+The [raw report](results/boundaries.json) records 19 of 19 expected outcomes and rejection of all three unsupported profiles on an Intel Xeon W-3223 host with 48 GiB RAM, Python 3.11.9 and Wasmtime 50.0.1. Exact OS build, architecture, timestamp and source hashes are included. The [boundary matrix](results/boundaries.md) summarizes each observation.
 
 | Boundary | Observed outcome |
 | --- | --- |
