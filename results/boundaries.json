@@ -10,7 +10,7 @@
       "passed": true,
       "result": {
         "detail": "completed",
-        "elapsed_seconds": 0.09100057699833997,
+        "elapsed_seconds": 0.08826150499953656,
         "module_sha256": "32e9891ae7d3cedff10d21cea1ae3a989d4fb5424b89b9c2f93328535cf30af7",
         "policy": {
           "cpu_seconds": 2,
@@ -34,7 +34,7 @@
       "passed": true,
       "result": {
         "detail": "completed",
-        "elapsed_seconds": 0.09311059999890858,
+        "elapsed_seconds": 0.08865619400239666,
         "module_sha256": "51ec660374131bcb05d2ae0cca0e004d94776d60046ff85d879b057825dfde32",
         "policy": {
           "cpu_seconds": 2,
@@ -58,7 +58,7 @@
       "passed": true,
       "result": {
         "detail": "completed",
-        "elapsed_seconds": 0.09409719099858194,
+        "elapsed_seconds": 0.0908209959998203,
         "module_sha256": "bf10afe538964d9ce85423415522910dee2ca1a37944c104251c4b7abb88fe31",
         "policy": {
           "cpu_seconds": 2,
@@ -82,7 +82,7 @@
       "passed": true,
       "result": {
         "detail": "memory minimum size of 2 pages exceeds memory limits",
-        "elapsed_seconds": 0.09279652199984412,
+        "elapsed_seconds": 0.09074418900127057,
         "module_sha256": "be1846c54949701a540e921f6880229562e8e6c8ff4e02ba0b608aacaa88a4cf",
         "policy": {
           "cpu_seconds": 2,
@@ -106,7 +106,7 @@
       "passed": true,
       "result": {
         "detail": "completed",
-        "elapsed_seconds": 0.09425309899961576,
+        "elapsed_seconds": 0.09221578899814631,
         "module_sha256": "49db9ee4390ffc6db04169ae9483020aec3ec6519064cfb673bd6951964c2097",
         "policy": {
           "cpu_seconds": 2,
@@ -130,7 +130,7 @@
       "passed": true,
       "result": {
         "detail": "error while executing at wasm backtrace:\n    0:     0x2a - <unknown>!<wasm function 0>\n\nCaused by:\n    0: memory fault at wasm address 0x10000 in linear memory of size 0x10000\n    1: wasm trap: out of bounds memory access\n",
-        "elapsed_seconds": 0.0955265109987522,
+        "elapsed_seconds": 0.09115840000231401,
         "module_sha256": "9ad63c4ad76b71d059a9d8790b74c1b63bf409009ada2c08432d9343644447ab",
         "policy": {
           "cpu_seconds": 2,
@@ -154,7 +154,7 @@
       "passed": true,
       "result": {
         "detail": "completed",
-        "elapsed_seconds": 0.09996884300198872,
+        "elapsed_seconds": 0.09266401399872848,
         "module_sha256": "61980b4bf6d4a60ed7fb62c4c9e61ff90eedd5b1a91520aac57a7b366c18f1d6",
         "policy": {
           "cpu_seconds": 2,
@@ -178,8 +178,8 @@
       "passed": true,
       "result": {
         "detail": "completed",
-        "elapsed_seconds": 0.09943042599843466,
-        "module_sha256": "46da707b59730d02c0d8fd4f3163283a6ee6ab5ec062286e7f234297ad6797f7",
+        "elapsed_seconds": 0.09372076300132903,
+        "module_sha256": "39915f81f115d2ed10b8f40d1a7d8d66268ac2064c19f8d59c653bf74fbb16c7",
         "policy": {
           "cpu_seconds": 2,
           "disk_bytes": 0,
@@ -202,7 +202,7 @@
       "passed": true,
       "result": {
         "detail": "completed",
-        "elapsed_seconds": 0.10299675499845762,
+        "elapsed_seconds": 0.09253163899848005,
         "module_sha256": "007eee8a08ad4e09ea8563203cde1045d6ed1eb6c3254ce83d9c56804111d2a2",
         "policy": {
           "cpu_seconds": 2,
@@ -226,7 +226,7 @@
       "passed": true,
       "result": {
         "detail": "completed",
-        "elapsed_seconds": 0.10664522300066892,
+        "elapsed_seconds": 0.0899065179983154,
         "module_sha256": "16b610130562ffe05b88248be461d8ccb8a439991636d4967994119a629bd6c3",
         "policy": {
           "cpu_seconds": 2,
@@ -250,7 +250,7 @@
       "passed": true,
       "result": {
         "detail": "completed",
-        "elapsed_seconds": 0.09710430300037842,
+        "elapsed_seconds": 0.09806044600190944,
         "module_sha256": "b14dc2893b0da9bcff0dd569b868f96a6bea632bed2d2f165fbcfd9f5a6391f8",
         "policy": {
           "cpu_seconds": 2,
@@ -274,7 +274,7 @@
       "passed": true,
       "result": {
         "detail": "completed",
-        "elapsed_seconds": 0.09696727299888153,
+        "elapsed_seconds": 0.09352169500198215,
         "module_sha256": "51b9f264befe3bca36ca667295c8f1db406c2bb777833ea214ebe22a177c81e3",
         "policy": {
           "cpu_seconds": 2,
@@ -298,7 +298,7 @@
       "passed": true,
       "result": {
         "detail": "completed",
-        "elapsed_seconds": 0.09399931200096034,
+        "elapsed_seconds": 0.09066802300003474,
         "module_sha256": "fc7ed84864cb7118db58ecf53a727e08c6adaa6e86db5632a204ea5366fd1b65",
         "policy": {
           "cpu_seconds": 2,
@@ -322,7 +322,7 @@
       "passed": true,
       "result": {
         "detail": "unknown import: `wasi_snapshot_preview1::sock_open` has not been defined",
-        "elapsed_seconds": 0.09257180100030382,
+        "elapsed_seconds": 0.0909114040005079,
         "module_sha256": "aa8f6b4bb437c9f3f3327facbfcd77445bdf94120cb323c1118c1412b6bc2e07",
         "policy": {
           "cpu_seconds": 2,
@@ -346,7 +346,7 @@
       "passed": true,
       "result": {
         "detail": "unsupported import",
-        "elapsed_seconds": 0.09893584800011013,
+        "elapsed_seconds": 0.09103468000103021,
         "module_sha256": "f9c0380849541abed65b683c0793a3b8cc6a69415a523d647e934b2506104ef6",
         "policy": {
           "cpu_seconds": 2,
@@ -370,7 +370,7 @@
       "passed": true,
       "result": {
         "detail": "error while executing at wasm backtrace:\n    0:     0x21 - <unknown>!<wasm function 0>\n\nCaused by:\n    wasm trap: all fuel consumed by WebAssembly\n",
-        "elapsed_seconds": 0.0965012270025909,
+        "elapsed_seconds": 0.09128457699989667,
         "module_sha256": "1f31ed67237b8f64eb306808515105d156f6376246726e88269f6a4407020916",
         "policy": {
           "cpu_seconds": 2,
@@ -394,7 +394,7 @@
       "passed": true,
       "result": {
         "detail": "worker killed by signal consistent with CPU cap; external kill is indistinguishable",
-        "elapsed_seconds": 1.0116826849989593,
+        "elapsed_seconds": 1.0117820619998383,
         "module_sha256": "1f31ed67237b8f64eb306808515105d156f6376246726e88269f6a4407020916",
         "policy": {
           "cpu_seconds": 1,
@@ -418,7 +418,7 @@
       "passed": true,
       "result": {
         "detail": "error while executing at wasm backtrace:\n    0:     0x28 - <unknown>!short\n\nCaused by:\n    wasm trap: all fuel consumed by WebAssembly\n",
-        "elapsed_seconds": 0.09925946300063515,
+        "elapsed_seconds": 0.0910040030030359,
         "module_sha256": "74289cd431dfdb52a1e2ac9adcface2357b3c56ae5d2539400d0de1f0178f9de",
         "policy": {
           "cpu_seconds": 2,
@@ -442,7 +442,7 @@
       "passed": true,
       "result": {
         "detail": "worker deadline exceeded",
-        "elapsed_seconds": 0.5046011010017537,
+        "elapsed_seconds": 0.504474024000956,
         "module_sha256": "aac930a294d053a976f914466b2569df9a60046633125a1a07cbb47a9dd2e6da",
         "policy": {
           "cpu_seconds": 2,
@@ -480,7 +480,7 @@
   "python": "3.11.9",
   "repetitions": 1,
   "schema_version": 1,
-  "source_commit": "f062d252d69213c591c06e57417b4c7937bd8ae7",
+  "source_commit": "bdffaf85ff10f9e28682592af0c9d041c04862f7",
   "source_sha256": {
     "experiments/__init__.py": "30c94d4491b3606fc39e782a7b645e38d1e68394a6dfe5a15969c38ecc2a7ebb",
     "experiments/probes.py": "3e30a23851bc0300ebeef04192feb080a933f4bdac13379be93761019d21706d",
@@ -488,13 +488,13 @@
     "fixtures/answer.wat": "b4cae88ad77be4f4643282f3663218c70b335aede20c81b8a03dcd0a21de9105",
     "sandbox_boundaries/__init__.py": "87307ac6e54e3bad979f332bf930d26a081c1b3ba7d7d35c3eae45d3f2eb00b1",
     "sandbox_boundaries/__main__.py": "cdb053e14f885090a0fbe92e3d0b54998cd215b295cbdee2ce2cdfd62056187b",
-    "sandbox_boundaries/_worker.py": "b0e8a8ce3c40298fef6501b1dfe98fae0b22e083a51d690a0c725b3726e15f5c",
+    "sandbox_boundaries/_worker.py": "6be81129f7e0cdec9c8e076a61b7e69e3bbd6e2602399090deb915c025a22b9f",
     "sandbox_boundaries/runner.py": "5649b573556124cdd7fb7c737e9f84581b86af7e14157ef45a4cc10321fc8cf8",
-    "tests/test_runner.py": "668a3ad23574e2b03cbe9131351e7ca1fcd9b9260d20e34f51309f9775f67e7f"
+    "tests/test_runner.py": "461c9f4afd8ad524add4980731759aaa969e309bd76b468eff6ef5a5952bb0ae"
   },
   "source_tree_clean": true,
   "thread_limit": 1,
-  "timestamp_utc": "2026-11-09T18:28:42.272457+00:00",
+  "timestamp_utc": "2026-11-09T18:32:32.705508+00:00",
   "unsupported_profiles": [
     {
       "reason": "only zero guest disk bytes are supported",
