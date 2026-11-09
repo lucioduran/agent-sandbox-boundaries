@@ -20,6 +20,7 @@ def execute(request: dict[str, Any]) -> dict[str, Any]:
     config = wt.Config()
     config.consume_fuel = True
     config.parallel_compilation = False
+    config.memory_init_cow = False
     config.max_wasm_stack = 262_144
     config.wasm_threads = False
     config.wasm_gc = False

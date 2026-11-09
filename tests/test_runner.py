@@ -232,3 +232,10 @@ def test_worker_failure_reports(monkeypatch, binary, returncode, output):
 
     monkeypatch.setattr(runner.subprocess, "Popen", lambda *a, **k: Failed())
     assert run(binary).status == "worker_error"
+
+
+def test_initialized_memory_with_zero_file_limit():
+    wat = """(module (memory 1) (data (i32.const 0) "A")
+    (func (export "run") (result i32) i32.const 0 i32.load8_u))"""
+    result = run(bytes(wasmtime.wat2wasm(wat)))
+    assert (result.status, result.value) == ("ok", 65), result

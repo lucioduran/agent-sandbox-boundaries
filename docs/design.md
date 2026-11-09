@@ -43,7 +43,9 @@ cap and disabled proposals reduce scope but do not prove a compiler-memory bound
 Deployments requiring a total RSS bound must use a separately verified VM or
 container mechanism; this runner rejects that requested profile.
 
-Wasmtime parallel compilation and Wasm threads are disabled. GC, memory64,
+Wasmtime parallel compilation, copy-on-write memory initialization and Wasm threads are disabled.
+Disabling copy-on-write initialization prevents Linux memory-image file creation
+from conflicting with the worker zero file-size limit. GC, memory64,
 multi-memory, stack switching, components, SIMD and additional advanced proposals
 are disabled to keep the execution contract small. The table and stack are
 separately bounded, not counted as linear memory.
