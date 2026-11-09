@@ -74,8 +74,9 @@ def test_invalid_input(module):
 def test_types(binary):
     with pytest.raises(TypeError):
         run("text")
-    with pytest.raises(TypeError):
-        run(binary, {"fuel": 1})
+    for invalid in ({"fuel": 1}, {}, False, 0):
+        with pytest.raises(TypeError):
+            run(binary, invalid)
 
 
 def test_unsupported_platform(monkeypatch, binary):

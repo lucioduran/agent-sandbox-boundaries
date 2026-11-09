@@ -65,7 +65,7 @@ class Result:
 
 def run(module: bytes, policy: Policy | None = None) -> Result:
     """Run bounded binary Wasm in a fresh worker; never execute native modules."""
-    policy = policy or Policy()
+    policy = Policy() if policy is None else policy
     if not isinstance(policy, Policy):
         raise TypeError("policy must be a Policy")
     policy.__post_init__()
