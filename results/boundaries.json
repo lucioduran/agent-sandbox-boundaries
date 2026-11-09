@@ -1,0 +1,522 @@
+{
+  "api_cost_usd": 0,
+  "canary_intact": true,
+  "cases": [
+    {
+      "boundary": "control",
+      "expected_status": "ok",
+      "expected_value": 42,
+      "name": "answer",
+      "passed": true,
+      "result": {
+        "detail": "completed",
+        "elapsed_seconds": 0.09100057699833997,
+        "module_sha256": "32e9891ae7d3cedff10d21cea1ae3a989d4fb5424b89b9c2f93328535cf30af7",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "ok",
+        "value": 42
+      }
+    },
+    {
+      "boundary": "ephemerality",
+      "expected_status": "ok",
+      "expected_value": 1,
+      "name": "fresh_global",
+      "passed": true,
+      "result": {
+        "detail": "completed",
+        "elapsed_seconds": 0.09311059999890858,
+        "module_sha256": "51ec660374131bcb05d2ae0cca0e004d94776d60046ff85d879b057825dfde32",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "ok",
+        "value": 1
+      }
+    },
+    {
+      "boundary": "memory",
+      "expected_status": "ok",
+      "expected_value": -1,
+      "name": "linear_growth",
+      "passed": true,
+      "result": {
+        "detail": "completed",
+        "elapsed_seconds": 0.09409719099858194,
+        "module_sha256": "bf10afe538964d9ce85423415522910dee2ca1a37944c104251c4b7abb88fe31",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 65536,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "ok",
+        "value": -1
+      }
+    },
+    {
+      "boundary": "memory",
+      "expected_status": "rejected",
+      "expected_value": null,
+      "name": "initial_memory",
+      "passed": true,
+      "result": {
+        "detail": "memory minimum size of 2 pages exceeds memory limits",
+        "elapsed_seconds": 0.09279652199984412,
+        "module_sha256": "be1846c54949701a540e921f6880229562e8e6c8ff4e02ba0b608aacaa88a4cf",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 65536,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "rejected",
+        "value": null
+      }
+    },
+    {
+      "boundary": "memory",
+      "expected_status": "ok",
+      "expected_value": -1,
+      "name": "table_growth",
+      "passed": true,
+      "result": {
+        "detail": "completed",
+        "elapsed_seconds": 0.09425309899961576,
+        "module_sha256": "49db9ee4390ffc6db04169ae9483020aec3ec6519064cfb673bd6951964c2097",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1,
+          "wall_seconds": 5.0
+        },
+        "status": "ok",
+        "value": -1
+      }
+    },
+    {
+      "boundary": "memory",
+      "expected_status": "trap",
+      "expected_value": null,
+      "name": "out_of_bounds",
+      "passed": true,
+      "result": {
+        "detail": "error while executing at wasm backtrace:\n    0:     0x2a - <unknown>!<wasm function 0>\n\nCaused by:\n    0: memory fault at wasm address 0x10000 in linear memory of size 0x10000\n    1: wasm trap: out of bounds memory access\n",
+        "elapsed_seconds": 0.0955265109987522,
+        "module_sha256": "9ad63c4ad76b71d059a9d8790b74c1b63bf409009ada2c08432d9343644447ab",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "trap",
+        "value": null
+      }
+    },
+    {
+      "boundary": "filesystem",
+      "expected_status": "ok",
+      "expected_value": 8,
+      "name": "relative_traversal",
+      "passed": true,
+      "result": {
+        "detail": "completed",
+        "elapsed_seconds": 0.09996884300198872,
+        "module_sha256": "61980b4bf6d4a60ed7fb62c4c9e61ff90eedd5b1a91520aac57a7b366c18f1d6",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "ok",
+        "value": 8
+      }
+    },
+    {
+      "boundary": "filesystem",
+      "expected_status": "ok",
+      "expected_value": 8,
+      "name": "absolute_canary",
+      "passed": true,
+      "result": {
+        "detail": "completed",
+        "elapsed_seconds": 0.09943042599843466,
+        "module_sha256": "46da707b59730d02c0d8fd4f3163283a6ee6ab5ec062286e7f234297ad6797f7",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "ok",
+        "value": 8
+      }
+    },
+    {
+      "boundary": "disk",
+      "expected_status": "ok",
+      "expected_value": 8,
+      "name": "create_file",
+      "passed": true,
+      "result": {
+        "detail": "completed",
+        "elapsed_seconds": 0.10299675499845762,
+        "module_sha256": "007eee8a08ad4e09ea8563203cde1045d6ed1eb6c3254ce83d9c56804111d2a2",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "ok",
+        "value": 8
+      }
+    },
+    {
+      "boundary": "filesystem",
+      "expected_status": "ok",
+      "expected_value": 8,
+      "name": "no_preopen",
+      "passed": true,
+      "result": {
+        "detail": "completed",
+        "elapsed_seconds": 0.10664522300066892,
+        "module_sha256": "16b610130562ffe05b88248be461d8ccb8a439991636d4967994119a629bd6c3",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "ok",
+        "value": 8
+      }
+    },
+    {
+      "boundary": "environment",
+      "expected_status": "ok",
+      "expected_value": 0,
+      "name": "no_environment",
+      "passed": true,
+      "result": {
+        "detail": "completed",
+        "elapsed_seconds": 0.09710430300037842,
+        "module_sha256": "b14dc2893b0da9bcff0dd569b868f96a6bea632bed2d2f165fbcfd9f5a6391f8",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "ok",
+        "value": 0
+      }
+    },
+    {
+      "boundary": "environment",
+      "expected_status": "ok",
+      "expected_value": 0,
+      "name": "no_arguments",
+      "passed": true,
+      "result": {
+        "detail": "completed",
+        "elapsed_seconds": 0.09696727299888153,
+        "module_sha256": "51b9f264befe3bca36ca667295c8f1db406c2bb777833ea214ebe22a177c81e3",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "ok",
+        "value": 0
+      }
+    },
+    {
+      "boundary": "network",
+      "expected_status": "ok",
+      "expected_value": 8,
+      "name": "socket_send",
+      "passed": true,
+      "result": {
+        "detail": "completed",
+        "elapsed_seconds": 0.09399931200096034,
+        "module_sha256": "fc7ed84864cb7118db58ecf53a727e08c6adaa6e86db5632a204ea5366fd1b65",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "ok",
+        "value": 8
+      }
+    },
+    {
+      "boundary": "network",
+      "expected_status": "rejected",
+      "expected_value": null,
+      "name": "socket_creation",
+      "passed": true,
+      "result": {
+        "detail": "unknown import: `wasi_snapshot_preview1::sock_open` has not been defined",
+        "elapsed_seconds": 0.09257180100030382,
+        "module_sha256": "aa8f6b4bb437c9f3f3327facbfcd77445bdf94120cb323c1118c1412b6bc2e07",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "rejected",
+        "value": null
+      }
+    },
+    {
+      "boundary": "imports",
+      "expected_status": "rejected",
+      "expected_value": null,
+      "name": "native_import",
+      "passed": true,
+      "result": {
+        "detail": "unsupported import",
+        "elapsed_seconds": 0.09893584800011013,
+        "module_sha256": "f9c0380849541abed65b683c0793a3b8cc6a69415a523d647e934b2506104ef6",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "rejected",
+        "value": null
+      }
+    },
+    {
+      "boundary": "CPU",
+      "expected_status": "fuel_limit",
+      "expected_value": null,
+      "name": "fuel_loop",
+      "passed": true,
+      "result": {
+        "detail": "error while executing at wasm backtrace:\n    0:     0x21 - <unknown>!<wasm function 0>\n\nCaused by:\n    wasm trap: all fuel consumed by WebAssembly\n",
+        "elapsed_seconds": 0.0965012270025909,
+        "module_sha256": "1f31ed67237b8f64eb306808515105d156f6376246726e88269f6a4407020916",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 10000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "fuel_limit",
+        "value": null
+      }
+    },
+    {
+      "boundary": "CPU",
+      "expected_status": "cpu_limit",
+      "expected_value": null,
+      "name": "cpu_loop",
+      "passed": true,
+      "result": {
+        "detail": "worker killed by signal consistent with CPU cap; external kill is indistinguishable",
+        "elapsed_seconds": 1.0116826849989593,
+        "module_sha256": "1f31ed67237b8f64eb306808515105d156f6376246726e88269f6a4407020916",
+        "policy": {
+          "cpu_seconds": 1,
+          "disk_bytes": 0,
+          "fuel": 1000000000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5
+        },
+        "status": "cpu_limit",
+        "value": null
+      }
+    },
+    {
+      "boundary": "CPU",
+      "expected_status": "fuel_limit",
+      "expected_value": null,
+      "name": "start_loop",
+      "passed": true,
+      "result": {
+        "detail": "error while executing at wasm backtrace:\n    0:     0x28 - <unknown>!short\n\nCaused by:\n    wasm trap: all fuel consumed by WebAssembly\n",
+        "elapsed_seconds": 0.09925946300063515,
+        "module_sha256": "74289cd431dfdb52a1e2ac9adcface2357b3c56ae5d2539400d0de1f0178f9de",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 10000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 5.0
+        },
+        "status": "fuel_limit",
+        "value": null
+      }
+    },
+    {
+      "boundary": "wall time",
+      "expected_status": "wall_limit",
+      "expected_value": null,
+      "name": "blocking_poll",
+      "passed": true,
+      "result": {
+        "detail": "worker deadline exceeded",
+        "elapsed_seconds": 0.5046011010017537,
+        "module_sha256": "aac930a294d053a976f914466b2569df9a60046633125a1a07cbb47a9dd2e6da",
+        "policy": {
+          "cpu_seconds": 2,
+          "disk_bytes": 0,
+          "fuel": 1000000,
+          "memory_bytes": 1048576,
+          "network": "deny",
+          "process_memory_bytes": null,
+          "table_elements": 1024,
+          "wall_seconds": 0.5
+        },
+        "status": "wall_limit",
+        "value": null
+      }
+    }
+  ],
+  "hardware": {
+    "architecture": "x86_64",
+    "cpu": "Intel(R) Xeon(R) W-3223 CPU @ 3.50GHz",
+    "logical_cpus": 16,
+    "memory_bytes": 51539607552,
+    "os_build": "25G241",
+    "os_version": "26.7.1"
+  },
+  "limitations": [
+    "Synthetic regression evidence, not a security audit or escape-proof claim.",
+    "Memory budget covers guest linear memory, not total worker RSS or compiler allocation.",
+    "No packet capture: network evidence is capability rejection, not host firewall validation.",
+    "CPU signal attribution cannot distinguish an external SIGKILL.",
+    "Single local run; elapsed timings are observations, not performance estimates."
+  ],
+  "no_created_files_in_canary_directory": true,
+  "passed": true,
+  "platform": "macOS-26.7.1-x86_64-i386-64bit",
+  "python": "3.11.9",
+  "repetitions": 1,
+  "schema_version": 1,
+  "source_commit": "f062d252d69213c591c06e57417b4c7937bd8ae7",
+  "source_sha256": {
+    "experiments/__init__.py": "30c94d4491b3606fc39e782a7b645e38d1e68394a6dfe5a15969c38ecc2a7ebb",
+    "experiments/probes.py": "3e30a23851bc0300ebeef04192feb080a933f4bdac13379be93761019d21706d",
+    "experiments/reproduce.py": "f6d0c18c25597520559e648b30eddf80f4727782e9279a3398f874f02bc8895b",
+    "fixtures/answer.wat": "b4cae88ad77be4f4643282f3663218c70b335aede20c81b8a03dcd0a21de9105",
+    "sandbox_boundaries/__init__.py": "87307ac6e54e3bad979f332bf930d26a081c1b3ba7d7d35c3eae45d3f2eb00b1",
+    "sandbox_boundaries/__main__.py": "cdb053e14f885090a0fbe92e3d0b54998cd215b295cbdee2ce2cdfd62056187b",
+    "sandbox_boundaries/_worker.py": "b0e8a8ce3c40298fef6501b1dfe98fae0b22e083a51d690a0c725b3726e15f5c",
+    "sandbox_boundaries/runner.py": "5649b573556124cdd7fb7c737e9f84581b86af7e14157ef45a4cc10321fc8cf8",
+    "tests/test_runner.py": "668a3ad23574e2b03cbe9131351e7ca1fcd9b9260d20e34f51309f9775f67e7f"
+  },
+  "source_tree_clean": true,
+  "thread_limit": 1,
+  "timestamp_utc": "2026-11-09T18:28:42.272457+00:00",
+  "unsupported_profiles": [
+    {
+      "reason": "only zero guest disk bytes are supported",
+      "rejected": true,
+      "settings": {
+        "disk_bytes": 1
+      }
+    },
+    {
+      "reason": "only denied guest network access is supported",
+      "rejected": true,
+      "settings": {
+        "network": "allow"
+      }
+    },
+    {
+      "reason": "total process-memory enforcement is unavailable",
+      "rejected": true,
+      "settings": {
+        "process_memory_bytes": 1073741824
+      }
+    }
+  ],
+  "wasmtime": "50.0.1"
+}
